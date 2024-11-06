@@ -1,13 +1,10 @@
-// index.js
-// where your node app starts
-
 // init project
 require('dotenv').config();
 var express = require('express');
 var app = express();
 
 // enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
-// so that your API is remotely testable by FCC
+// so that your API was remotely testable by freeCodeCamp
 var cors = require('cors');
 app.use(cors({ optionsSuccessStatus: 200 })); // some legacy browsers choke on 204
 
@@ -19,15 +16,13 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-// your first API endpoint...
-app.get('/api/hello', function (req, res) {
-  res.json({ greeting: 'hello API' });
-});
-
 app.get('/api/:whoami?', (req, res) => {
+  let headers = req.headers;
   let ipAddress = req.ip;
-  let lang = req
-  console.log(lang)
+  let lang = headers['accept-language']
+  let userAgent = headers['user-agent']
+  
+  return res.json({ipaddress: ipAddress, language: lang, software: userAgent})
 })
 
 // listen for requests :)
