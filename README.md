@@ -1,3 +1,11 @@
 # Request Header Parser Microservice
 
-This is the boilerplate for the Request Header Parser Microservice project. Instructions for building your project can be found at https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/request-header-parser-microservice
+This project is a very simple Header Parser Microservice that parses the headers requested from the client, built using the Express framework. Once the request is complete, the API responds with a JSON object containing the user's IP address, language, and software. 
+
+## Key Features:
+
+- API Endpoint: GET /api/:whoami? : parses a ==:whoami== object which is then used to request ==headers== from the client.
+
+
+
+
