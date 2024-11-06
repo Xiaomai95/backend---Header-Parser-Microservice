@@ -4,9 +4,9 @@ This project is a very simple Header Parser Microservice that parses the headers
 
 ## Key Features:
 
-- API Endpoint: GET /api/:whoami? : parses a ==:whoami== object which is then used to request ==headers== from the client.
+- API Endpoint: GET `/api/:whoami?` : parses a ==:whoami== object which is then used to request ==headers== from the client.
 
-- Error Handling: if GET request fails a JSON object with an error message is sent in respone.
+- Error Handling: if GET request fails a JSON object with an error message is sent in response.
 
 ## Example Resposes:
 `/api/whoami` => `{"ipaddress":"::ffff:159.20.14.100","language":"en-US,en;q=0.5",
