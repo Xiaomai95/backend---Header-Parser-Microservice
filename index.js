@@ -18,11 +18,20 @@ app.get('/', function (req, res) {
 
 app.get('/api/:whoami?', (req, res) => {
   let headers = req.headers;
-  let ipAddress = req.ip;
-  let lang = headers['accept-language']
-  let userAgent = headers['user-agent']
-  
-  return res.json({ipaddress: ipAddress, language: lang, software: userAgent})
+
+  if (headers) {
+
+    let ipAddress = req.ip;
+    let lang = headers['accept-language']
+    let userAgent = headers['user-agent']
+    
+    return res.json({ipaddress: ipAddress, language: lang, software: userAgent})
+  }
+
+  else {
+    return res.json({error: "Handler request failed"})
+  }
+
 })
 
 // listen for requests :)
